@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'paperclip', '~> 4.2.0'
 gem 'therubyracer', '~> 0.12.1'
 gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'friendly_id', '~> 5.0.4'
 group :development do
   gem "better_errors"
   gem 'spring' 
