@@ -15,5 +15,5 @@ gem 'therubyracer', '~> 0.12.1'
 gem 'bootstrap-sass', '~> 3.3.1.0'
 group :development do
   gem "better_errors"
-  gem 'spring', 
+  gem 'spring' 
 end
