@@ -1,5 +1,8 @@
 <div class="row">
-  <div class="col-md-2 col-md-offset-5">
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-8">
         <%= bootstrap_form_for @recipe, html: { multipart: true } do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -13,27 +16,31 @@
     </div>
   <% end %>
 
-            <div class="field">
-              <%= f.text_field :name %>
+            <div class="form-group">
+              <%= f.text_field :name , :class => 'form-control', placeholder: "Name of recipe" %>
 
             </div>
-            <div class="field">
-              <%= f.text_area :origin %>
+            <div class="form-group">
+              <%= f.text_area :origin , :class => 'form-control', :rows => 6, placeholder: "Where's this recipe from?" %>
 
             </div>
 
-            <div class="field">
-              <%= f.text_area :ingredients %>
+            <div class="form-group">
+              <%= f.text_area :ingredients , :class => 'form-control', :rows => 6, placeholder: "List of ingredients" %>
             </div>
-            <div class="field">
-              <%= f.text_area :description %>
+            <div class="form-group">
+              <%= f.text_area :description , :class => 'form-control', :rows => 6, placeholder: "How is it cooked?" %>
             </div>
-            <div class="field">
-              <%= f.file_field :image %>
+            <div class="form-group">
+              <%= f.file_field :image , :class => 'form-control'%>
             </div>
             <div class="actions">
-              <%= f.submit%>
+              <%= f.submit :html => {:class => 'btn-custom'}%>
             </div>
+
+  </div>
 <% end %>
+  <div class="col-md-2">
+
   </div>
 </div>

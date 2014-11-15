@@ -2,7 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Edited Page', @recipe, class: 'btn btn-primary' %> 
-<%= link_to 'Main page', recipes_path, class: 'btn btn-primary' %> 
-<%= link_to 'Delete', @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+<%= link_to 'Back', @recipe, class: 'btn btn-back' %> 
+<%= link_to 'Main page', recipes_path, class: 'btn btn-back' %> 
+<%= link_to 'Delete', @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-back' %>
 
