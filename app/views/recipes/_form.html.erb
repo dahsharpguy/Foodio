@@ -1,4 +1,4 @@
-<%= form_for @recipe, html: { multipart: true } do |f| %>
+<%= bootstrap_form_for @recipe, html: { multipart: true } do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -12,22 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
     <%= f.text_field :name %>
+
   </div>
   <div class="field">
-    <%= f.label :ingredients %><br>
+    <%= f.text_area :origin %>
+
+  </div>
+  <div class="field">
     <%= f.text_area :ingredients %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

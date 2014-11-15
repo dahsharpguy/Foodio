@@ -1,3 +1,62 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.span3
+{
+  float: right; margin-top: -5px; 
+}
+
+.span8
+{
+  padding: 1px;
+}
+
+.origin
+{
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-content{
+  border: 1px solid #ddd;
+  margin-top: -20px;
+}
+
+.recipe-content{
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+
+.media{
+ padding-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.media-body{
+  padding-left: 15px;
+}
+
+.media-left{
+  float: left !important;
+}
+
+.media-heading a{
+  text-decoration: none !important;
+
+
+}
+
+.media-heading a hover{
+  color: #fff !important;
+}
+
+
+

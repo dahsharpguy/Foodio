@@ -1,14 +1,40 @@
-<div class="row">
-<% @recipes.each do |recipe| %>
-    <div class="col-sm-6 col-md-9">
-      <%= link_to (image_tag recipe.image.url(:thumb), class: 'image'), recipe %>
-      <%= link_to recipe.name, recipe %>
-    </div>
-<% end %>
-</div>
-<br>
-<br>
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= render 'layouts/header' %>
+
+
+  <div class="container">
+      <div class="row main-content">
+        <div class="col-md-2 side-bar">
+
+          <%= link_to 'New Recipe', new_recipe_path %>
+        </div>
+        <div class="col-md-7 recipe-content">
+          
+            
+            <section>
+
+              <% @recipes.each do |recipe| %>
+              <div class="media">
+               
+                  <%= link_to (image_tag recipe.image.url(:thumb), class: 'image media-left media-middle'), recipe %>
+                
+                <div class="media-body">
+                  <h5 class="media-heading"><%= link_to recipe.name, recipe %></h5> 
+                  <p>
+                    <%= recipe.origin %>
+                  </p>
+                  
+                </div>
+              </div>
+            
+          <% end %>
+          </section>
+          </div>
+          <div class="col-md-3">
+
+          </div>
+      </div>
+  </div>
+
 
 
 

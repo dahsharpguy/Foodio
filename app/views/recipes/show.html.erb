@@ -1,18 +1,24 @@
 <%= image_tag @recipe.image.url(:medium) %>
-<p>
-  <strong>Name:</strong>
+<div class="container">
+
+  <strong>Name of recipe</strong><br>
   <%= @recipe.name %>
 </p>
 
+<strong>History of origin</strong><br>
+  <%= @recipe.origin %>
+</p>
+
 <p>
-  <strong>Ingredients:</strong>
+  <strong>Ingredients</strong><br>
   <%= @recipe.ingredients %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Description</strong><br>
   <%= @recipe.description %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
