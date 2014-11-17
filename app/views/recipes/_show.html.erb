@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row main-content">
+        <div class="col-md-2 side-bar">
+          <%= link_to 'Add a New Recipe', new_recipe_path, class: "btn btn-custom" %><br><br>
+          <p id="content-underline" class="sidebar">FEEDS</p>
+          <a href="#">Related Recipes</a>
+          <br><br>
+          <a href="#">Most Popular Recipes</a><br><br>
+          <a href="#">Most Interesting Recipes</a>
+        </div>
+
+        <div class="col-md-7">
+                    
+                      <%= image_tag @recipe.image.url(:medium), class: "img-responsive ri" %>
+                    
+                     <p class= "section-heading">Name of Recipe</p><br>
+
+                      <p class="show-content" id="myfont"><%= @recipe.name.humanize %></p>  
+
+                    <p class="section-heading">Origin</p><br>
+                    <p class="show-content" id="myfont"><%= @recipe.origin %></p>
+                    
+
+                    
+                      <p class="section-heading">Ingredients</p><br>
+                      <p class="show-content" id="myfont"><%= @recipe.ingredients %></p>
+                    
+                      <p class="section-heading">How to prepare</p><br>
+                      <p class="show-content" id="myfont"><%= @recipe.description %></p>
+          <br><br><br>
+
+                    <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-back" %> 
+                   <%= link_to 'Back', recipes_path, class: "btn btn-back" %>
+        </div>
+        <div class="col-md-3 sidebar">
+          SHARE ON SOCIAL MEDIA
+        </div>
+      </div>
+
+        
+  </div>
+  
+
+</div>
+

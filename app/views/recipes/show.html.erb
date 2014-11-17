@@ -1,24 +1,4 @@
-<%= image_tag @recipe.image.url(:medium) %>
-<div class="container">
+<%= render 'layouts/header' %>
 
-  <strong>Name of recipe</strong><br>
-  <%= @recipe.name %>
-</p>
+<%= render 'show' %>
 
-<strong>History of origin</strong><br>
-  <%= @recipe.origin %>
-</p>
-
-<p>
-  <strong>Ingredients</strong><br>
-  <%= @recipe.ingredients %>
-</p>
-
-<p>
-  <strong>Description</strong><br>
-  <%= @recipe.description %>
-</p>
-</div>
-
-<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-back" %> 
-<%= link_to 'Back', recipes_path, class: "btn btn-back" %>

@@ -5,6 +5,7 @@
 
 
 
+
 .span3
 {
   float: right; margin-top: -5px; 
@@ -13,6 +14,11 @@
 .span8
 {
   padding: 1px;
+}
+
+#content-underline
+{
+  border-bottom:1px solid #ddd;
 }
 
 .origin
@@ -24,13 +30,16 @@
 }
 
 .main-content{
-  border: 1px solid #ddd;
+  //border: 1px solid #ddd;
   margin-top: -20px;
+  padding-top: 80px;
 }
 
 .recipe-content{
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+ /* border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd; 
+using this to check the borders of the page
+  */
 }
 
 
@@ -50,28 +59,31 @@
 
 .media-heading a{
   text-decoration: none !important;
-
+  font-family: "open sans", "verdana", "helvetica";
+  font-size: 20px;
+  color: #811E1E !important;
 
 }
 
 .media-heading a hover{
   color: #fff !important;
+  font-size: 18px;
 }
 
 .btn-custom {
-  background-color: hsl(195, 60%, 35%) !important;
+  background-color: hsl(195, 60%, 21%) !important;
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7", endColorstr="#23748e");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#2d95b7), to(#23748e));
-  background-image: -moz-linear-gradient(top, #2d95b7, #23748e);
-  background-image: -ms-linear-gradient(top, #2d95b7, #23748e);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d95b7), color-stop(100%, #23748e));
-  background-image: -webkit-linear-gradient(top, #2d95b7, #23748e);
-  background-image: -o-linear-gradient(top, #2d95b7, #23748e);
-  background-image: linear-gradient(#2d95b7, #23748e);
-  border-color: #23748e #23748e hsl(195, 60%, 32.5%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#57b5d5", endColorstr="#154555");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#57b5d5), to(#154555));
+  background-image: -moz-linear-gradient(top, #57b5d5, #154555);
+  background-image: -ms-linear-gradient(top, #57b5d5, #154555);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #57b5d5), color-stop(100%, #154555));
+  background-image: -webkit-linear-gradient(top, #57b5d5, #154555);
+  background-image: -o-linear-gradient(top, #57b5d5, #154555);
+  background-image: linear-gradient(#57b5d5, #154555);
+  border-color: #154555 #154555 hsl(195, 60%, 11.5%);
   color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.62);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -91,4 +103,47 @@
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
   -webkit-font-smoothing: antialiased;
+}
+
+
+
+//trying to use this for show page
+
+.section-heading {
+  font-size: 21px;
+  margin-top: 41px;
+  font-weight: 700
+}
+
+.show-content {
+  line-height: 1.5;
+  margin: 30px 0;
+  display: block;
+-webkit-margin-before: -1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+
+
+
+#myfont {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #404040;
+
+}
+
+img.ri
+{
+  top: 50%;
+  left: 50%;
+  
+  
+  
+}
+
+.sidebar
+{
+  color: #4A4646
 }
