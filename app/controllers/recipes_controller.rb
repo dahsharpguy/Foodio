@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     # @recipes = Recipe.all
-    @recipes = Recipe.order(:name).page params[:page]
+    @recipes = Recipe.order("recipes.created_at DESC").page(params[:page])
   end
 
   # GET /recipes/1
