@@ -20,4 +20,5 @@ gem 'spring'
 gem 'bootstrap_forms'
 gem 'kaminari'
 gem 'shareable'
+gem 'devise'
 
