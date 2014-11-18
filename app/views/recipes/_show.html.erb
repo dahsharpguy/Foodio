@@ -32,9 +32,10 @@
                     <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-back" %> 
                    <%= link_to 'Back', recipes_path, class: "btn btn-back" %>
         </div>
-        <div class="col-md-3 sidebar">
-          SHARE ON SOCIAL MEDIA
+        <div class="col-md-3 sidebar" id="content-underline">
+          <p>SHARE ON SOCIAL MEDIA</p>
         </div>
+        <%= render_shareable %>
       </div>
 
         

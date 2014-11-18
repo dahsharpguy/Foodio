@@ -1,0 +1,50 @@
+<div class="container">
+      <div class="row main-content">
+        <div class="col-md-2 side-bar">
+
+          <%= link_to 'Add a New Recipe', new_recipe_path, class: "btn btn-custom" %><br><br>
+          <p id="content-underline">FEEDS</p>
+          <a href="#">Top Recipes</a>
+          <br><br>
+          <a href="#">Most Popular Recipes</a><br><br>
+          <a href="#">Most Interesting Recipes</a>
+        </div>
+        <div class="col-md-7 recipe-content">
+          
+            
+            <section>
+
+              <% @recipes.each do |recipe| %>
+              <div class="media">
+               
+                  <%= link_to (image_tag recipe.image.url(:thumb), class: 'image media-left media-middle'), recipe %>
+                
+                <div class="media-body">
+                  <h5 class="media-heading"><%= link_to recipe.name.humanize, recipe %></h5> 
+                  <p>
+                    <%= recipe.origin %>
+                  </p>
+                  
+                </div>
+              </div>
+            
+          <% end %>
+          </section>
+          </div>
+          <div class="col-md-3">
+            <div class="box">
+              <p id="myfont"><strong>There's more on Foodio..</strong></p><br>
+                <p>Find new recipes for simple and exotic dishes everyday. And remember to Vote for your favorite dishes.</p><br>
+              <%= link_to 'Generate random recipe', new_recipe_path, class: "btn btn-custom" %>
+            </div>
+            <br>
+
+            <p id="content-underline">TELL YOUR FRIENDS ON SOCIAL MEDIA</p>
+            <%= render_shareable %>
+
+            <br><br>
+          
+          </div>
+      </div>
+      <%= paginate @recipes %>
+  </div>

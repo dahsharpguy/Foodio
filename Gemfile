@@ -19,5 +19,5 @@ gem "better_errors"
 gem 'spring' 
 gem 'bootstrap_forms'
 gem 'kaminari'
-
+gem 'shareable'
 
