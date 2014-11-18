@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115093016) do
+ActiveRecord::Schema.define(version: 20141118135728) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -36,9 +36,8 @@ ActiveRecord::Schema.define(version: 20141115093016) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "cached_slug"
-    t.string   "slug"
     t.text     "origin"
+    t.string   "slug"
   end
 
   add_index "recipes", ["slug"], name: "index_recipes_on_slug"
