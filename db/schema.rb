@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118160107) do
+ActiveRecord::Schema.define(version: 20141121140948) do
+
+  create_table "comments", force: true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "recipe_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["recipe_id"], name: "index_comments_on_recipe_id"
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

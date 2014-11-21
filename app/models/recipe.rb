@@ -1,6 +1,10 @@
 class Recipe < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+  belongs_to :user
+  
+  has_many :comments
+
+  #extend FriendlyId
+  #friendly_id :name, use: :slugged
   has_attached_file :image, styles: { medium: "600x400#", thumb: "100x100#" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
@@ -9,6 +13,8 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :ingredients
   validates_presence_of :description
   validates_presence_of :image
+  
 
   paginates_per 8
+
 end

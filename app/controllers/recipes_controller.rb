@@ -1,12 +1,14 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
-
+  
   # GET /recipes
   # GET /recipes.json
   def index
     # @recipes = Recipe.all
+
     @recipes = Recipe.order("recipes.created_at DESC").page(params[:page])
+
   end
 
   # GET /recipes/1
@@ -66,7 +68,7 @@ class RecipesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
-      @recipe = Recipe.friendly.find(params[:id])
+      @recipe = Recipe.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

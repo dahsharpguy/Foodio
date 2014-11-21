@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'paperclip', '~> 4.2.0'
 gem 'therubyracer', '~> 0.12.1'
 gem 'less-rails'
-gem 'friendly_id', '~> 5.0.4'
+#gem 'friendly_id', '~> 5.0.4'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem "better_errors"
 gem 'spring' 
@@ -21,4 +21,6 @@ gem 'bootstrap_forms'
 gem 'kaminari'
 gem 'shareable'
 gem 'devise'
+
+gem 'formtastic', '~> 3.0'
 
