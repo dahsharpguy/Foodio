@@ -15,12 +15,16 @@ gem 'therubyracer', '~> 0.12.1'
 gem 'less-rails'
 #gem 'friendly_id', '~> 5.0.4'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
-gem "better_errors"
 gem 'spring' 
 gem 'bootstrap_forms'
 gem 'kaminari'
 gem 'shareable'
 gem 'devise'
-
+gem 'haml'
 gem 'formtastic', '~> 3.0'
+
+group :development do
+gem "better_errors"
+gem 'binding_of_caller'
+end
 

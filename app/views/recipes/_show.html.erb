@@ -30,39 +30,26 @@
 
                       
           <br><br><br>
-                  <h2>Comments</h2>
-                  <% @recipe.comments.each do |comment| %>
-                  <p class="section-heading"><b>Commenter</b></p>
-                      <p class="show-content"><%= comment.commenter %></p>
-                  
-                  <p class="section-head"><b>Comment</b></p>
-                      <p class="show-content"><%= comment.body%></p>
-                  
-                  <% end %>
-
-
-                  <% if user_signed_in? %>
-              <h2>Add a comment</h2>
-                  <%= form_for ([@recipe, @recipe.comments.build]) do |f| %>
-                    <div class="field">
-                      <%= f.label :commenter %> <br />
-                      <%= current_user.email.split("@")[0] %>
-                    </div>
-                    <div class="field">
-                      <%= f.label :body %>
-                      <%= f.text_area :body %>
-                    </div>
-                    <div class="action">
-                      <%= f.submit %>
-                    </div>
-                    <% end %>
-    <% end %>
-
-
-         
+                 
 
                     <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-back" %> 
                    <%= link_to 'Back', recipes_path, class: "btn btn-back" %>
+
+                   <br><br><br><br>
+
+                   <div id="comments">
+                      <h5>
+                        <%= @recipe.comments.count %> Comments
+                      </h5>
+                      <br><br>
+                      <h2>Sign in to leave a comment</h2>
+                      <%= render @recipe.comments %>
+                      <% if current_user != nil %>
+                      <h3>Reply to thread</h3>
+                      <% end %>
+
+                      <%= render "comments/form" %>
+                  </div>
 
         </div>
         <div class="col-md-3 sidebar" id="content-underline">

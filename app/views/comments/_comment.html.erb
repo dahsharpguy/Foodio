@@ -1,0 +1,11 @@
+<div class="container">
+<% if current_user != nil %>
+  <p class="comment-email">
+  <%= current_user.email.split("@")[0].to_s %> says:
+  </p>
+  <% end %>
+  <p class="comment">
+  <%= comment.comment %>
+  </p>
+  </div>
+

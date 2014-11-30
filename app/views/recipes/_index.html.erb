@@ -1,5 +1,3 @@
-
-
 <div class="container">
       <div class="row main-content">
         <div class="col-md-2 side-bar">
@@ -26,16 +24,14 @@
                     <%= recipe.origin %>
                   </p>
 
-            
-
                 </div>
-                
+              <%= recipe.comments.count %>  Comments
               </div>
             
           <% end %>
           </section>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 hidden-sm hidden-xs">
             <div class="box">
               <p id="myfont"><strong>There's more on Foodio..</strong></p><br>
                 <p>Find new recipes for simple and exotic dishes everyday. And remember to Vote for your favorite dishes.</p><br>

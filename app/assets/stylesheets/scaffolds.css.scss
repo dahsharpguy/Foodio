@@ -68,3 +68,33 @@ div {
   }
 }
 
+.comment{background: #CCc;
+padding: 25px 12px;
+margin-bottom: 45px;
+border-bottom: 1px solid #E5E5E5;
+overflow: hidden;
+border-radius: 5px;
+display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+
+.comment-email{
+  font-family: Lato, Helvetica, Arial;
+  font-size: 15px; 
+
+
+}
+
+textarea{
+border-radius: 2px;
+box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.3);
+border: 1px solid #e2e6e6;
+margin: 10px 0 10px 0;
+font-family: 'Open Sans', sans-serif;
+outline: none;
+width: 395px;
+height: 100px;
+}

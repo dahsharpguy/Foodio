@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121140948) do
+ActiveRecord::Schema.define(version: 20141128100022) do
 
   create_table "comments", force: true do |t|
-    t.string   "commenter"
-    t.text     "body"
+    t.text     "comment"
     t.integer  "recipe_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "comments", ["recipe_id"], name: "index_comments_on_recipe_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -50,21 +51,29 @@ ActiveRecord::Schema.define(version: 20141121140948) do
     t.string   "slug"
   end
 
-  add_index "recipes", ["slug"], name: "index_recipes_on_slug"
-
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                       default: "",    null: false
+    t.string   "encrypted_password",          default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",               default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_female",                   default: false
+    t.datetime "date_of_birth"
+    t.string   "name"
+    t.integer  "my_draft_comments_count",     default: 0
+    t.integer  "my_published_comments_count", default: 0
+    t.integer  "my_comments_count",           default: 0
+    t.integer  "draft_comcoms_count",         default: 0
+    t.integer  "published_comcoms_count",     default: 0
+    t.integer  "deleted_comcoms_count",       default: 0
+    t.integer  "spam_comcoms_count",          default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
