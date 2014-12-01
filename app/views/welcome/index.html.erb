@@ -1,48 +1,29 @@
-<h1>Welcome to Foodio</h1>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Foodio</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <div class="input-group">
-        <button type="submit" class="btn btn-default">Submit</button>
-        </div>
-      </form>
-       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'Home' , recipes_path, class: "glyphicon glyphicon-home" %></li>
-        <li><%= link_to 'Notifications', class: "glyphicon glyphicon-bell" %></li>
-        
-      </ul>
+<div class="jumbotron">
+  <% if user_signed_in? %>
+    <h1>Welcome back!<%= current_user.name %></h1>
+    <p class="lead">
+      Click on the button below to go to the forum.
+    </p>
+    <%= link_to 'Click Here', recipes_path, :class => 'btn btn-large btn-primary' %>
+  <% else %>
+  <div class="text-center">
+    <h1>Welcome to Foodio!</h1>
+    <p class="lead">
+      Confused about what to eat?. Want to try some exotic dishes? You've come to the right place! 
+    </p>
+    <p class="lead">
+      You must sign in or sign up before you can access our super delicious,
+      top secret content.
+    </p>
+    <div class="row">
       
-      <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-
-        
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-  
+      <div class="col-md-6">
+        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success btn-lg" %>
+      </div>
+      <div class="span6">
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg" %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>

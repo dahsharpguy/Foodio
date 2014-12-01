@@ -22,6 +22,7 @@ gem 'shareable'
 gem 'devise'
 gem 'haml'
 gem 'formtastic', '~> 3.0'
+gem 'friendly_id'
 
 group :development do
 gem "better_errors"

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.friendly.find(params[:recipe_id])
     @comment = @recipe.comments.create(params[:comment].permit(:comment))
     @comment.user_id = current_user.id if current_user
     @comment.save

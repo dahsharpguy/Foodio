@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row main-content">
+  <div class="main-content">
         <div class="col-md-2 side-bar">
           <%= link_to 'Add a New Recipe', new_recipe_path, class: "btn btn-custom" %><br><br>
           <p id="content-underline" class="sidebar">FEEDS</p>
@@ -23,13 +23,13 @@
 
                     
                       <p class="section-heading">Ingredients</p><br>
-                      <p class="show-content" id="myfont"><%= @recipe.ingredients %></p>
+                      <p class="show-content" id="myfont"><%= @recipe.ingredients.html_safe %></p>
                     
                       <p class="section-heading">How to prepare</p><br>
-                      <p class="show-content" id="myfont"><%= @recipe.description %></p>
+                      <p class="show-content" id="myfont"><%= @recipe.description.html_safe %></p>
 
                       
-          <br><br><br>
+          <br/><br/><br/>
                  
 
                     <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-back" %> 
@@ -53,9 +53,10 @@
 
         </div>
         <div class="col-md-3 sidebar" id="content-underline">
-          <p>SHARE ON SOCIAL MEDIA</p>
+          <p>SHARE ON SOCIAL MEDIA</p><hr/>
+            <%= render_shareable %>
         </div>
-        <%= render_shareable %>
+      
       </div>
 
         

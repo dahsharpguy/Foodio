@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130133000) do
+ActiveRecord::Schema.define(version: 20141201103057) do
 
   create_table "comments", force: true do |t|
     t.text     "comment"
@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(version: 20141130133000) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.text     "origin"
-    t.string   "slug"
     t.integer  "user_id"
+    t.string   "slug"
   end
 
-  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
+  add_index "recipes", ["slug"], name: "index_recipes_on_slug"
 
   create_table "users", force: true do |t|
     t.string   "email",                       default: "",    null: false
