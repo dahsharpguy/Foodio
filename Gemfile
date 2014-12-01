@@ -24,6 +24,7 @@ gem 'haml'
 gem 'formtastic', '~> 3.0'
 gem 'friendly_id'
 gem 'acts_as_votable'
+gem 'searchkick'
 
 group :development do
 gem "better_errors"

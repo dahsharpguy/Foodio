@@ -14,14 +14,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <div class="input-group">
-        <button type="submit" class="btn btn-default">Submit</button>
-        </div>
-      </form>
+      <%= form_tag search_recipes_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
+          <p>
+            <%= text_field_tag :search, params[:search], class: "form-control" %>
+            <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+          </p>
+          <% end %>
+
        <ul class="nav navbar-nav">
         <li class="active"><%= link_to 'Home' , recipes_path, class: "glyphicon glyphicon-home" %></li>
         <li><%= link_to 'Notifications', class: "glyphicon glyphicon-bell" %></li>
@@ -31,7 +30,7 @@
       <p class="navbar-text pull-right">
     <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to 'Account', edit_user_registration_path, :class => 'navbar-link' %> |
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
     <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |

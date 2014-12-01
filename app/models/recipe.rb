@@ -1,10 +1,11 @@
 class Recipe < ActiveRecord::Base
+  searchkick
   belongs_to :user
   
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   #extend FriendlyId
   #friendly_id :name, use: :slugged

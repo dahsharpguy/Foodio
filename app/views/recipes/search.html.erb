@@ -1,0 +1,17 @@
+<div class="span4">
+<section>
+      <% @recipes.each do |recipe| %>
+        <div class="media">
+               
+            <%= link_to (image_tag recipe.image.url(:thumb), class: 'image media-left media-middle'), recipe %>
+                
+                <div class="media-body">
+                  <h5 class="media-heading"><%= link_to recipe.name.humanize, recipe %></h5> 
+              <p>
+                <%= recipe.origin %>
+              </p>
+
+            </div>
+            <% end %>
+</section>
+</div>
