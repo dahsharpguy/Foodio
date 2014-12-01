@@ -26,6 +26,9 @@
 
                 </div>
               <%= recipe.comments.count %>  Comments
+              <%= link_to "upvote", like_recipe_path(recipe), method: :put %>
+              <%= link_to "downvote", dislike_recipe_path(recipe), method: :put %>
+              <%= recipe.score %> votes
               </div>
             
           <% end %>

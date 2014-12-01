@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments
   end
+
+  resources :recipes do
+    member do
+      put "like", to: "recipes#upvote"
+      put "dislike", to: "recipes#downvote"
+    end
+  end
   
   
 

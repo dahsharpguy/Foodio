@@ -17,7 +17,10 @@ class Recipe < ActiveRecord::Base
   validates_presence_of :description
   validates_presence_of :image
   
-
+  acts_as_votable
   paginates_per 8
 
+  def score
+    self.get_upvotes.size - self.get_downvotes.size
+  end
 end

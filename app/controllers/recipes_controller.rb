@@ -65,6 +65,18 @@ class RecipesController < ApplicationController
     end
   end
 
+  def upvote
+    @recipe = Recipe.friendly.find(params[:id])
+    @recipe.upvote_by current_user
+    redirect_to recipes_path
+  end
+
+  def downvote
+    @recipe = Recipe.friendly.find(params[:id])
+    @recipe.downvote_by current_user
+    redirect_to recipes_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe

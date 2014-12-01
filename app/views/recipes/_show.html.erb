@@ -23,10 +23,13 @@
 
                     
                       <p class="section-heading">Ingredients</p><br>
-                      <p class="show-content" id="myfont"><%= @recipe.ingredients.html_safe %></p>
+                      <p class="show-content" id="myfont"><%= h(@recipe.ingredients).gsub(/\n/, '<br/>').html_safe %></p>
                     
                       <p class="section-heading">How to prepare</p><br>
-                      <p class="show-content" id="myfont"><%= @recipe.description.html_safe %></p>
+                      <div class="show-content" id="myfont"><%= h(@recipe.description).gsub(/\n/, '<br/>').html_safe %></div>
+                      <br/><br/><br/>
+                      <%= link_to "upvote", like_recipe_path(@recipe), method: :put %>
+                      <%= link_to "downvote", dislike_recipe_path(@recipe), method: :put %>
 
                       
           <br/><br/><br/>
@@ -35,7 +38,10 @@
                     <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-back" %> 
                    <%= link_to 'Back', recipes_path, class: "btn btn-back" %>
 
-                   <br><br><br><br>
+                   <br/><br/><br/><br/>
+
+                   This recipe has <%= @recipe.score %> votes
+                   <br/><br/>
 
                    <div id="comments">
                       <h5>
