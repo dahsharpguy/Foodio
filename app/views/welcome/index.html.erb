@@ -1,29 +1,97 @@
-<div class="jumbotron">
-  <% if user_signed_in? %>
-    <h1>Welcome back!<%= current_user.name %></h1>
-    <p class="lead">
-      Click on the button below to go to the forum.
-    </p>
-    <%= link_to 'Click Here', recipes_path, :class => 'btn btn-large btn-primary' %>
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Wrapper for slides -->
+    <% if user_signed_in? %>
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Welcome back!<%= current_user.name %></h1>        
+            <h3>Click on the button below to go to the forum.</h3>
+        </hgroup>
+        <%= link_to 'Foodio', recipes_path, class: "btn btn-hero btn-lg" %>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>We have the most varied recipes in the world</h1>        
+            <h3>Click below to see the world's best source of food recipes</h3>
+        </hgroup>       
+        <%= link_to 'Recipes Forum', recipes_path, class: "btn btn-hero btn-lg" %>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>We are amazing</h1>        
+            <h3>Click to go to the forum</h3>
+        </hgroup>
+        <%= link_to 'Take me there', recipes_path, class: "btn btn-hero btn-lg" %>
+      </div>
+    </div>
+  </div> <!-- End of wrapper -->
   <% else %>
-  <div class="text-center">
-    <h1>Welcome to Foodio!</h1>
-    <p class="lead">
-      Confused about what to eat?. Want to try some exotic dishes? You've come to the right place! 
-    </p>
-    <p class="lead">
-      You must sign in or sign up before you can access our super delicious,
-      top secret content.
-    </p>
-    <div class="row">
-      
-      <div class="col-md-6">
-        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success btn-lg" %>
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Welcome to Foodio</h1>  
+            <h3>The world's best source of food recipes</h3> <br/>     
+            <h4>Sign in or sign up before you can access our super delicious, top secret content.</h4>
+        </hgroup>
+        <div class="col-md-6">
+        <%= link_to "Log In", new_user_session_path, :class => "btn btn-success btn-lg" %>
       </div>
       <div class="span6">
         <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg" %>
       </div>
       </div>
     </div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>Looking for an obscure recipe?</h1>        
+            <h3>Click below to see the world's best source of food recipes</h3>
+        </hgroup>       
+        <%= link_to 'Take a peek', recipes_path, class: "btn btn-hero btn-lg" %>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>You've come to the right place!</h1>        
+            <h3>Click below to Sign up</h3>
+        </hgroup>
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success btn-lg" %>
+      </div>
+    </div>
+  </div> <!-- End of wrapper -->
   <% end %>
+
+  <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="/">© 2014 TechShrine</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
+
